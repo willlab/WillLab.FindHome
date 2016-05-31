@@ -25,40 +25,24 @@ namespace WillLab.FindHome.Web.Controllers
 
             return View();
         }
-        public async Task<ActionResult> Find(string address, string city, string state, string zipcode)
-        {
-            var model = new FindHouseViewModel();
-            model.Address = address;
-            model.City = city;
-            model.State = state;
-            model.Zipcode = zipcode;
 
-            if (address != null && (city != null || state != null))
-            {
-                using (var service = new HouseService())
-                {
-                    model.HouseSearchResult = await service.FindHouseAsync(address, city, state, zipcode);
-                }
-            }
-            return View("Find", model);
+        public ActionResult Find()
+        {
+            return View("Find", new FindHouseViewModel());
         }
 
-        public async Task<ActionResult> SearchResult(string address, string city, string state, string zipcode)
-        {
-            var model = new FindHouseViewModel();
-            model.Address = address;
-            model.City = city;
-            model.State = state;
-            model.Zipcode = zipcode;
 
-            if (address != null && (city != null || state != null))
+        public async Task<ActionResult> SearchResult(FindHouseViewModel model)
+        {
+            if (model.Address != null && (model.City != null || model.State != null))
             {
                 using (var service = new HouseService())
                 {
-                    model.HouseSearchResult = await service.FindHouseAsync(address, city, state, zipcode);
+                    model.HouseSearchResult = await service.FindHouseAsync(model.Address, model.City, model.State, model.Zipcode);
                 }
             }
             return PartialView("SearchResult", model);
         }
+
     }
 }
