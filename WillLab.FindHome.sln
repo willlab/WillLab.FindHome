@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillLab.FindHome.Web", "WillLab.FindHome.Web\WillLab.FindHome.Web.csproj", "{CA1E8FD9-04DD-4750-8321-A3FE128460A4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillLab.FindHome.Service", "WillLab.FindHome.Service\WillLab.FindHome.Service.csproj", "{8CD3B702-A8EF-4D08-8AEB-B3673508E266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillLab.FindHome.Model", "WillLab.FindHome.Model\WillLab.FindHome.Model.csproj", "{12FBFBB9-1559-45E1-A85A-A1FE0929CDC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillLab.FindHome.Core", "WillLab.FindHome.Core\WillLab.FindHome.Core.csproj", "{2BBD8DD1-4CE6-4F42-95C5-EBCD269A9EEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WillLab.FindHome.Zillow", "WillLab.FindHome.Zillow\WillLab.FindHome.Zillow.csproj", "{9279D55F-BF58-409D-9587-BA1247DC16B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA1E8FD9-04DD-4750-8321-A3FE128460A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA1E8FD9-04DD-4750-8321-A3FE128460A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA1E8FD9-04DD-4750-8321-A3FE128460A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA1E8FD9-04DD-4750-8321-A3FE128460A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CD3B702-A8EF-4D08-8AEB-B3673508E266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CD3B702-A8EF-4D08-8AEB-B3673508E266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CD3B702-A8EF-4D08-8AEB-B3673508E266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CD3B702-A8EF-4D08-8AEB-B3673508E266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FBFBB9-1559-45E1-A85A-A1FE0929CDC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FBFBB9-1559-45E1-A85A-A1FE0929CDC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FBFBB9-1559-45E1-A85A-A1FE0929CDC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FBFBB9-1559-45E1-A85A-A1FE0929CDC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BBD8DD1-4CE6-4F42-95C5-EBCD269A9EEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BBD8DD1-4CE6-4F42-95C5-EBCD269A9EEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BBD8DD1-4CE6-4F42-95C5-EBCD269A9EEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BBD8DD1-4CE6-4F42-95C5-EBCD269A9EEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9279D55F-BF58-409D-9587-BA1247DC16B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9279D55F-BF58-409D-9587-BA1247DC16B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9279D55F-BF58-409D-9587-BA1247DC16B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9279D55F-BF58-409D-9587-BA1247DC16B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

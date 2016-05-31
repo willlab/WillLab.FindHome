@@ -1,0 +1,48 @@
+﻿@model WillLab.FindHome.Web.Models.FindHouseViewModel
+<div>
+    @if (Model.HouseSearchResult != null)
+    {
+        <hr />
+        <h2>Search Result:</h2>
+        <div style="font-size:medium;">
+            <div>
+                <span>@(Model.HouseSearchResult.StatusMessage)</span>
+            </div>
+            <div>
+                @if (Model.HouseSearchResult.StatusCode == "0")
+                {
+                    <span>
+                        @string.Format("{0}, {1}, {2}, {3}",
+                     Model.HouseSearchResult.HouseInfo.Address,
+                      Model.HouseSearchResult.HouseInfo.City,
+                       Model.HouseSearchResult.HouseInfo.State,
+                        Model.HouseSearchResult.HouseInfo.Zipcode
+                     )
+                    </span>
+                    if (Model.HouseSearchResult.HouseInfo.EstimatedValue != null)
+                    {
+                        <br />
+                        <span>Estimated Value: @Model.HouseSearchResult.HouseInfo.EstimatedValue</span>
+                    }
+                    <br />
+                    <img style='width: 800px; height: 500px;
+                    background-repeat: no-repeat;
+                    background-image: url(http://dev.virtualearth.net/REST/v1/Imagery/Map/Road/@(Model.HouseSearchResult.HouseInfo.Latitude),@(Model.HouseSearchResult.HouseInfo.Longitude)/15?mapSize=800,500&pp=@(Model.HouseSearchResult.HouseInfo.Latitude),@(Model.HouseSearchResult.HouseInfo.Longitude)&key=AmdvKO2hNoyLePakiVzRBZiGPKCxV6MtwWneohoPfmXclTaRTzvT6_Ict5-PBHO6);' />
+                    <br />
+                    if (Model.HouseSearchResult.HouseInfo.Links != null && Model.HouseSearchResult.HouseInfo.Links.Count() > 0)
+                    {
+                        <div>
+                            <span>Links:</span>
+                            <ul>
+                                @foreach (var link in Model.HouseSearchResult.HouseInfo.Links)
+                                {
+                                    <li><a href="@link.Value" target="_blank">@link.Key</a></li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,62 @@
+﻿@model WillLab.FindHome.Web.Models.FindHouseViewModel
+@{
+    ViewBag.Title = "FindHouse";
+}
+
+<h2>Input the address</h2>
+@*<script src="~/Scripts/jquery-2.2.3.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>*@
+<script type="text/javascript">
+    var spinnerVisible = false;
+    function onBegin() {
+        if (!spinnerVisible) {
+            $("div#spinner").fadeIn("fast");
+            spinnerVisible = true;
+        }
+    }
+    function onComplete() {
+        if (spinnerVisible) {
+            var spinner = $("div#spinner");
+            spinner.stop();
+            spinner.fadeOut("fast");
+            spinnerVisible = false;
+        }
+    }
+</script>
+
+@using (Ajax.BeginForm("SearchResult", "FindHouse", new AjaxOptions { UpdateTargetId = "searchResultDiv", OnBegin = "onBegin", OnComplete = "onComplete" }))
+{
+    <div style="font-size:medium;">
+        <div>
+            @Html.LabelFor(m => m.Address, new { @class = "effect" })
+            @Html.TextBoxFor(m => m.Address, new { @class = "effect" })
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.City, new { @class = "effect" })
+            @Html.TextBoxFor(m => m.City, new { @class = "effect" })
+            @Html.ValidationMessageFor(m => m.City)
+        </div>
+        <div>
+            <label for="State" class="effect">State</label>
+            <select id="State" name="State" class="effect">
+                @foreach (var state in Model.States)
+                {
+                    <option value="@state" @(Model.State == @state ? "selected='selected'" : "")>@state</option>
+                }
+            </select>
+        </div>
+        <div>
+            @Html.LabelFor(m => m.Zipcode, new { @class = "effect" })
+            @Html.TextBoxFor(m => m.Zipcode, new { @class = "effect" })
+            @Html.ValidationMessageFor(m => m.Zipcode)
+        </div>
+    </div>
+    <div>
+        <label class="effect"></label>
+        <input type="submit" value="Find" class="effect" />
+    </div>
+}
+
+<div id="spinner">Loading...</div>
+<div id="searchResultDiv"></div>
