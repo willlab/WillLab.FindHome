@@ -18,7 +18,9 @@ namespace WillLab.FindHome.Service
         /// <returns>house info result</returns>
         public async Task<FindHouseResultModel> FindHouseAsync(string address, string city, string state, string zip)
         {
+            // We can use Dependency Injection or Reflection here to break the dependency
             IHouseProvider provider = new ZillowHouseProvider();
+
             return await provider.FindHouseAsync(address, city, state, zip);
         }
 
